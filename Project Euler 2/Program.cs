@@ -27,6 +27,7 @@ namespace Project_Euler_2
             foreach (var VARIABLE in fib)
             {
                 Console.WriteLine(VARIABLE);
+                
             }
         }
     }
