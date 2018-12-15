@@ -14,21 +14,36 @@ namespace Project_Euler_2
             
             //base cases
             fib.Add(1);
-            fib.Add(2);
+            fib.Add(1);
             int sum = 0;
+            int sum_pair = 0;
+            
+            
+            bool sumLimitFlag = true;
             
             do
             {
                 sum = fib.ElementAt(fib.Count - 2) + fib.ElementAt(fib.Count - 1);
-                fib.Add(sum);
-            } while ( sum < 4000000);
 
+                if (sum > 4000000)
+                {
+                    sumLimitFlag = false;
+                }
+                else
+                {
+                    fib.Add(sum);
 
-            foreach (var VARIABLE in fib)
-            {
-                Console.WriteLine(VARIABLE);
+                    if (sum % 2 == 0)
+                    {
+                        sum_pair += sum;
+                    }
+                    
+                }
                 
-            }
+            } while ( sumLimitFlag);
+            
+            Console.WriteLine(sum_pair);
+         
         }
     }
 }
